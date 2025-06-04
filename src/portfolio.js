@@ -1,7 +1,5 @@
-
-
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; 
+import splashAnimation from "./assets/lottie/splashAnimation";
 
 // Splash Screen
 
@@ -34,7 +32,7 @@ const socialMediaLinks = {
   github: "https://github.com/xenon110",
   linkedin: "hhttps://www.linkedin.com/in/mayank-raj-b8b312272/",
   gmail: "mayankrajdto@gmail.com",
-  
+
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -44,70 +42,70 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY DATA SCIENCE ENTHUSIAST WHO TURNS RAW DATA INTO MEANINGFUL INSIGHTS WITH ML AND STATISTICS",
+  subTitle:
+    "CRAZY DATA SCIENCE ENTHUSIAST WHO TURNS RAW DATA INTO MEANINGFUL INSIGHTS WITH ML AND STATISTICS",
   skills: [
     emoji(
       "⚡ Transform raw data into powerful insights using machine learning, statistics, and visualization tools."
     ),
-    emoji("⚡ Build smart data-driven solutions using Python, R, and ML tools."),
-  
+    emoji("⚡ Build smart data-driven solutions using Python, R, and ML tools.")
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
-  {
-    skillName: "html-5",
-    fontAwesomeClassname: "fab fa-html5"
-  },
-  {
-    skillName: "css3",
-    fontAwesomeClassname: "fab fa-css3-alt"
-  },
-  {
-    skillName: "JavaScript",
-    fontAwesomeClassname: "fab fa-js"
-  },
-  {
-    skillName: "python",
-    fontAwesomeClassname: "fab fa-python"
-  },
-  {
-    skillName: "java",
-    fontAwesomeClassname: "fab fa-java"
-  },
-  {
-    skillName: "r",
-    fontAwesomeClassname: "fab fa-r-project"
-  },
-  {
-    skillName: "aws",
-    fontAwesomeClassname: "fab fa-aws"
-  },
-  {
-    skillName: "docker",
-    fontAwesomeClassname: "fab fa-docker"
-  },
-  {
-    skillName: "sql",
-    fontAwesomeClassname: "fas fa-database"
-  },
-  {
-    skillName: "postgresql",
-    fontAwesomeClassname: "fas fa-database"
-  },
-  {
-    skillName: "postman",
-    fontAwesomeClassname: "fas fa-envelope"
-  },
-  {
-    skillName: "machine learning",
-    fontAwesomeClassname: "fas fa-robot"
-  }
-],
-display: true
-// Set false to hide this section, defaults to true
+    {
+      skillName: "html-5",
+      fontAwesomeClassname: "fab fa-html5"
+    },
+    {
+      skillName: "css3",
+      fontAwesomeClassname: "fab fa-css3-alt"
+    },
+    {
+      skillName: "JavaScript",
+      fontAwesomeClassname: "fab fa-js"
+    },
+    {
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "java",
+      fontAwesomeClassname: "fab fa-java"
+    },
+    {
+      skillName: "r",
+      fontAwesomeClassname: "fab fa-r-project"
+    },
+    {
+      skillName: "aws",
+      fontAwesomeClassname: "fab fa-aws"
+    },
+    {
+      skillName: "docker",
+      fontAwesomeClassname: "fab fa-docker"
+    },
+    {
+      skillName: "sql",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "postgresql",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "postman",
+      fontAwesomeClassname: "fas fa-envelope"
+    },
+    {
+      skillName: "machine learning",
+      fontAwesomeClassname: "fas fa-robot"
+    }
+  ],
+  display: true
+  // Set false to hide this section, defaults to true
 };
 
 // Education Section
@@ -120,15 +118,14 @@ const educationInfo = {
       logo: require("./assets/images/vitap.jpg"),
       subHeader: "Computer Science Engineering",
       duration: "September 2022 - June 2026",
-      desc: "Consistently ranked in the top 5% of the student cohort.",
-      
+      desc: "Consistently ranked in the top 5% of the student cohort."
     },
     {
       schoolName: "Jawahar Navodaya Vidyalaya",
       logo: require("./assets/images/jnv.jpg"),
       subHeader: "Completed education from Grade 6 to 12 ",
       duration: "August 2015 - April 2022",
-      desc: "Ranked in the top 3% of the class.",
+      desc: "Ranked in the top 3% of the class."
     }
   ]
 };
@@ -154,8 +151,6 @@ const techStack = {
       Stack: "Backend",
       progressPercentage: "70%"
     }
-
-
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
@@ -168,7 +163,7 @@ const workExperiences = {
     {
       role: "Self-Learner - Data Science",
       company: "Independent",
-      companylogo: require("./assets/images/DataScience.png"),  // replace with your own logo or a generic icon
+      companylogo: require("./assets/images/DataScience.png"), // replace with your own logo or a generic icon
       date: "Jan 2023 – Present",
       desc: "Proactively learning data science concepts and tools including Python, pandas, NumPy, and machine learning algorithms. Completed multiple projects involving data analysis, visualization, and predictive modeling to build practical skills."
     },
@@ -178,9 +173,8 @@ const workExperiences = {
       company: "Amazon",
       companylogo: require("./assets/images/Amazon.png"),
       date: "June 2024 – Nov 2024",
-      desc: "Experienced in designing and deploying scalable cloud solutions with AWS, focusing on architecture best practices and security.",
+      desc: "Experienced in designing and deploying scalable cloud solutions with AWS, focusing on architecture best practices and security."
     },
-
 
     {
       role: "Cybersecurity",
@@ -191,10 +185,8 @@ const workExperiences = {
       descBullets: [
         "Monitored network traffic and identified suspicious activity using SIEM tools",
         "Assisted in vulnerability assessments and security audits across Cisco systems"
-        ]
+      ]
     }
-    
-
   ]
 };
 
@@ -228,8 +220,6 @@ const bigProjects = {
       image: require("./assets/images/nextuLogo.webp"),
       projectName: "Lumora",
       projectDesc: "From Confusion to Clarity — Start Here."
-      
-      
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -240,8 +230,7 @@ const bigProjects = {
 
 const achievementSection = {
   title: emoji("Achievements And Project 🏆 "),
-  subtitle:
-    "Achievements, Project Cool Stuff that I have done !",
+  subtitle: "Achievements, Project Cool Stuff that I have done !",
 
   achievementsCards: [
     {
@@ -251,7 +240,6 @@ const achievementSection = {
       image: require("./assets/images/Neo.jpg"),
       imageAlt: "Google Code-In Logo",
       footerLink: [
-        
         {
           name: "Visit the Site",
           url: "https://neon-dsa.vercel.app/"
@@ -282,8 +270,10 @@ const achievementSection = {
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Visit to Code", url: "https://github.com/xenon110/Skin-Disease-Classification/blob/main/skin-disease-classification%20(2).ipynb"}
-        
+        {
+          name: "Visit to Code",
+          url: "https://github.com/xenon110/Skin-Disease-Classification/blob/main/skin-disease-classification%20(2).ipynb"
+        }
       ]
     }
   ],
@@ -331,7 +321,8 @@ const talkSection = {
   talks: [
     {
       title: "Google WOW Speaker",
-      subtitle: "Honored to share my tech journey and inspire others on the Google WOW.",
+      subtitle:
+        "Honored to share my tech journey and inspire others on the Google WOW."
       // slides_url: "https://bit.ly/saadpasta-slides"
       // event_url: "https://www.facebook.com/events/2339906106275053/"
     }
@@ -343,7 +334,8 @@ const talkSection = {
 
 const podcastSection = {
   title: emoji("My Passion for Data Science "),
-  subtitle: "I’m deeply passionate about Data Science and Machine Learning because they allow me to turn raw data into meaningful insights and impactful solutions. The idea of using algorithms to solve real-world problems, predict outcomes, and uncover hidden patterns truly excites me. Every dataset feels like a puzzle waiting to be solved, and the continuous learning in this field keeps me motivated and curious every day.",
+  subtitle:
+    "I’m deeply passionate about Data Science and Machine Learning because they allow me to turn raw data into meaningful insights and impactful solutions. The idea of using algorithms to solve real-world problems, predict outcomes, and uncover hidden patterns truly excites me. Every dataset feels like a puzzle waiting to be solved, and the continuous learning in this field keeps me motivated and curious every day.",
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
@@ -376,7 +368,7 @@ const twitterDetails = {
   display: true // Set true to display this section, defaults to false
 };
 
-const isHireable = false; 
+const isHireable = false;
 
 export {
   illustration,
