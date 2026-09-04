@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/My_portfolio/static/css/main.8a03d4ea.css",
+    "main.js": "/My_portfolio/static/js/main.707fb00a.js",
+    "static/media/mayank_profile.png": "/My_portfolio/static/media/mayank_profile.88ddc83e043ddb927931.png",
+    "static/media/vitap.jpg": "/My_portfolio/static/media/vitap.10f92c325185f170c010.jpg",
+    "static/media/jnv.jpg": "/My_portfolio/static/media/jnv.c74fa6da568aa4c8f5b5.jpg",
+    "index.html": "/My_portfolio/index.html",
+    "main.8a03d4ea.css.map": "/My_portfolio/static/css/main.8a03d4ea.css.map",
+    "main.707fb00a.js.map": "/My_portfolio/static/js/main.707fb00a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a03d4ea.css",
+    "static/js/main.707fb00a.js"
+  ]
+}
