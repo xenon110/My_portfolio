@@ -3,46 +3,53 @@ import "./AchievementCard.scss";
 
 export default function AchievementCard({cardInfo, isDark}) {
   function openUrlInNewTab(url, name) {
-    if (!url) {
-      console.log(`URL for ${name} not found`);
-      return;
-    }
+    if (!url) return;
     var win = window.open(url, "_blank");
     win.focus();
   }
 
+  const footerLinks = cardInfo.footer || cardInfo.footerLink;
+
+  const renderIcon = (iconName) => {
+    if (iconName === "aws") return <i className="fab fa-aws" style={{ color: "#FF9900", fontSize: "22px" }}></i>;
+    if (iconName === "atom") return <i className="fas fa-atom" style={{ color: "#0284C7", fontSize: "22px" }}></i>;
+    if (iconName === "shield") return <i className="fas fa-shield-alt" style={{ color: "#10B981", fontSize: "22px" }}></i>;
+    if (iconName === "chart") return <i className="fas fa-chart-line" style={{ color: "#3B82F6", fontSize: "22px" }}></i>;
+    if (iconName === "code") return <i className="fas fa-code" style={{ color: "#8B5CF6", fontSize: "22px" }}></i>;
+    if (iconName === "trophy") return <i className="fas fa-trophy" style={{ color: "#F59E0B", fontSize: "22px" }}></i>;
+    return <i className="fas fa-certificate" style={{ color: "#FF9900", fontSize: "22px" }}></i>;
+  };
+
   return (
-    <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
-      <div className="certificate-image-div">
-        <img
-          src={cardInfo.image}
-          alt={cardInfo.imageAlt || "Card Thumbnail"}
-          className="card-image"
-        ></img>
+    <div className={isDark ? "achievement-item-row dark-mode" : "achievement-item-row"}>
+      <div className="achievement-icon-box">
+        {renderIcon(cardInfo.icon)}
       </div>
-      <div className="certificate-detail-div">
-        <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
-          {cardInfo.title}
-        </h5>
-        <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
-          {cardInfo.description}
-        </p>
+
+      <div className="achievement-info-content">
+        <h4 className="achievement-title-text">{cardInfo.title}</h4>
+        <p className="achievement-subtitle-text">{cardInfo.subtitle || cardInfo.description}</p>
       </div>
-      <div className="certificate-card-footer">
-        {cardInfo.footer.map((v, i) => {
-          return (
-            <span
+
+      {cardInfo.tag && (
+        <div className="achievement-tag-pill">
+          {cardInfo.tag}
+        </div>
+      )}
+
+      {footerLinks && (
+        <div className="achievement-footer-links">
+          {footerLinks.map((v, i) => (
+            <button
               key={i}
-              className={
-                isDark ? "dark-mode certificate-tag" : "certificate-tag"
-              }
+              className="achievement-link-btn"
               onClick={() => openUrlInNewTab(v.url, v.name)}
             >
-              {v.name}
-            </span>
-          );
-        })}
-      </div>
+              {v.name} ↗
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

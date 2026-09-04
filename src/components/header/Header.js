@@ -1,93 +1,71 @@
-import React, {useContext} from "react";
+import React, { useState } from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import StyleContext from "../../contexts/StyleContext";
-import {
-  greeting,
-  workExperiences,
-  skillsSection,
-  openSource,
-  blogSection,
-  talkSection,
-  achievementSection,
-  resumeSection
-} from "../../portfolio";
+import { greeting, socialMediaLinks } from "../../portfolio";
 
 function Header() {
-  const {isDark} = useContext(StyleContext);
-  const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
-  const viewSkills = skillsSection.display;
-  const viewAchievement = achievementSection.display;
-  const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
-  const viewResume = resumeSection.display;
+  const [activeTab, setActiveTab] = useState("Home");
+
+  function openResume() {
+    if (greeting.resumeLink) {
+      window.open(greeting.resumeLink, "_blank");
+    }
+  }
+
+  const navItems = [
+    { name: "Home", href: "#greeting" },
+    { name: "Experience", href: "#workExperience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Research", href: "#research" },
+    { name: "Technologies", href: "#technologies" },
+    { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Contact", href: "#contact" }
+  ];
 
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
-        <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
-          <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
+      <header className="aws-header">
+        <a href="#greeting" className="aws-brand">
+          <i className="fab fa-aws brand-aws-icon" style={{ color: "#FF9900", fontSize: "1.6rem" }}></i>
+          <span className="aws-brand-name">{greeting.username}</span>
         </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
-        </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
-            <li>
-              <a href="#skills">Skills</a>
+
+        <ul className="aws-nav-menu">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className={`nav-link ${activeTab === item.name ? "active" : ""}`}
+                onClick={() => setActiveTab(item.name)}
+              >
+                {item.name}
+              </a>
             </li>
-          )}
-          {viewExperience && (
-            <li>
-              <a href="#experience">Work Experiences</a>
-            </li>
-          )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
-            </li>
-          )}
-          {viewAchievement && (
-            <li>
-              <a href="#achievements">Achievements</a>
-            </li>
-          )}
-          {viewBlog && (
-            <li>
-              <a href="#blogs">Blogs</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )}
-          {viewResume && (
-            <li>
-              <a href="#resume">Resume</a>
-            </li>
-          )}
-          <li>
-            <a href="#contact">Contact Me</a>
-          </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li>
+          ))}
         </ul>
+
+        <div className="aws-header-actions">
+          {socialMediaLinks.github && (
+            <a href={socialMediaLinks.github} target="_blank" rel="noopener noreferrer" className="aws-icon-btn" aria-label="GitHub">
+              <i className="fab fa-github"></i>
+            </a>
+          )}
+          {socialMediaLinks.linkedin && (
+            <a href={socialMediaLinks.linkedin} target="_blank" rel="noopener noreferrer" className="aws-icon-btn" aria-label="LinkedIn">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          )}
+          {greeting.resumeLink && (
+            <button onClick={openResume} className="aws-resume-btn">
+              Resume <span className="download-arrow">⤓</span>
+            </button>
+          )}
+        </div>
       </header>
     </Headroom>
   );
 }
+
 export default Header;

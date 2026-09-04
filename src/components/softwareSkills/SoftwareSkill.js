@@ -4,22 +4,16 @@ import {skillsSection} from "../../portfolio";
 
 export default function SoftwareSkill() {
   return (
-    <div>
-      <div className="software-skills-main-div">
-        <ul className="dev-icons">
-          {skillsSection.softwareSkills.map((skills, i) => {
-            return (
-              <li
-                key={i}
-                className="software-skill-inline"
-                name={skills.skillName}
-              >
-                <i className={skills.fontAwesomeClassname}></i>
-                <p>{skills.skillName}</p>
-              </li>
-            );
-          })}
-        </ul>
+    <div className="software-skills-wrapper">
+      <div className="tech-pills-container">
+        {skillsSection.softwareSkills.map((skill, i) => {
+          return (
+            <div key={i} className="tech-pill-badge">
+              <i className={`${skill.fontAwesomeClassname} tech-icon`}></i>
+              <span className="tech-name">{skill.skillName}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

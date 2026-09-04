@@ -1,7 +1,18 @@
 @import "../_globalColor";
 
+body, html, #root {
+  background-color: #ffffff !important;
+  color: #161e2d !important;
+}
+
 .dark-mode {
-  background-color: $darkBackground;
-  color: white;
-  transition: "0.1s";
+  background-color: #ffffff !important;
+  color: #161e2d !important;
+}
+
+.aws-theme-wrapper {
+  background-color: #ffffff !important;
+  color: #161e2d !important;
+  min-height: 100vh;
+  width: 100%;
 }

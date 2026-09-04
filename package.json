@@ -1,5 +1,4 @@
 {
-  
   "name": "Mayank Portfolio",
   "version": "0.1.0",
   "private": true,
@@ -21,8 +20,9 @@
     "sass": "^1.32.8"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "start": "node fetch.js && react-scripts start",
+    "dev": "npm start",
+    "predeploy": "npm run build",
     "build": "node fetch.js && react-scripts build",
     "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",

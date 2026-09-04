@@ -12,24 +12,35 @@ export default function BlogCard({blog, isDark}) {
   }
 
   return (
-    <div onClick={() => openUrlInNewTab(blog.url, blog.title)}>
-      <div className={isDark ? "blog-container dark-mode" : "blog-container"}>
-        <a
-          className={
-            isDark ? "dark-mode blog-card blog-card-shadow" : "blog-card"
-          }
-          href="#blog"
-        >
-          <h3 className={isDark ? "small-dark blog-title" : "blog-title"}>
-            {blog.title}
-          </h3>
-          <p className={isDark ? "small-dark small" : "small"}>
-            {blog.description}
-          </p>
-          <div className="go-corner">
-            <div className="go-arrow">→</div>
+    <div
+      className={isDark ? "blog-container blog-card-dark" : "blog-container blog-card-light"}
+      onClick={() => openUrlInNewTab(blog.url, blog.title)}
+    >
+      <div className="blog-top-header">
+        <div className="blog-icon-cube">
+          <span>{blog.badge || "💻"}</span>
+        </div>
+        {blog.tag && (
+          <div className="blog-status-chip">
+            <span className="blog-dot"></span>
+            {blog.tag}
           </div>
-        </a>
+        )}
+      </div>
+
+      <div className="blog-content-group">
+        <h3 className={isDark ? "small-dark blog-title" : "blog-title"}>
+          {blog.title}
+        </h3>
+        <p className={isDark ? "small-dark small" : "small"}>
+          {blog.description}
+        </p>
+      </div>
+
+      <div className="blog-card-footer">
+        <span className={isDark ? "dark-mode blog-btn" : "blog-btn"}>
+          Explore Platform <span className="arrow-icon">↗</span>
+        </span>
       </div>
     </div>
   );

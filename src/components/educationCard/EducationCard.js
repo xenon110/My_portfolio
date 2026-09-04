@@ -1,11 +1,9 @@
-import React, {createRef, useContext} from "react";
+import React, {useContext} from "react";
 import {Fade, Slide} from "react-reveal";
 import "./EducationCard.scss";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function EducationCard({school}) {
-  const imgRef = createRef();
-
   const GetDescBullets = ({descBullets}) => {
     return descBullets
       ? descBullets.map((item, i) => (
@@ -25,13 +23,29 @@ export default function EducationCard({school}) {
         <div className="education-card">
           {school.logo && (
             <div className="education-card-left">
-              <img
-                crossOrigin={"anonymous"}
-                ref={imgRef}
-                className="education-roundedimg"
-                src={school.logo}
-                alt={school.schoolName}
-              />
+              {school.logo === "vitap" ? (
+                <img
+                  className="education-roundedimg"
+                  src={require("../../assets/images/vitap.jpg")}
+                  alt={school.schoolName}
+                />
+              ) : school.logo === "jnv" ? (
+                <img
+                  className="education-roundedimg"
+                  src={require("../../assets/images/jnv.jpg")}
+                  alt={school.schoolName}
+                />
+              ) : school.logo.includes("/") || school.logo.includes(".") ? (
+                <img
+                  className="education-roundedimg"
+                  src={school.logo}
+                  alt={school.schoolName}
+                />
+              ) : (
+                <div className="education-logo-badge">
+                  <i className="fas fa-graduation-cap" style={{ fontSize: "26px", color: "#FF9900" }}></i>
+                </div>
+              )}
             </div>
           )}
           <div className="education-card-right">
@@ -57,7 +71,7 @@ export default function EducationCard({school}) {
               <p className="education-text-desc">{school.desc}</p>
               <div className="education-text-bullets">
                 <ul>
-                  <GetDescBullets descBullets={school.descBullets} />
+                  <GetDescBullets descBullets={school.bullets || school.descBullets} />
                 </ul>
               </div>
             </div>
