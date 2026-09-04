@@ -28,7 +28,6 @@ function Header() {
     <Headroom>
       <header className="aws-header">
         <a href="#greeting" className="aws-brand">
-          <i className="fab fa-aws brand-aws-icon" style={{ color: "#FF9900", fontSize: "1.6rem" }}></i>
           <span className="aws-brand-name">{greeting.username}</span>
         </a>
 
