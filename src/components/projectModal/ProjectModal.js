@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import "./ProjectModal.scss";
 
-export default function ProjectModal({ project, isOpen, onClose, isDark }) {
+export default function ProjectModal({project, isOpen, onClose, isDark}) {
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = e => {
       if (e.key === "Escape") {
         onClose();
       }
@@ -26,7 +26,7 @@ export default function ProjectModal({ project, isOpen, onClose, isDark }) {
     <div className="modal-overlay" onClick={onClose}>
       <div
         className={`modal-container ${isDark ? "dark-mode" : ""}`}
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
@@ -34,12 +34,18 @@ export default function ProjectModal({ project, isOpen, onClose, isDark }) {
         {/* Header Bar */}
         <div className="modal-header">
           <div className="modal-title-row">
-            <span className="modal-category-badge">{project.category || "AI Project"}</span>
+            <span className="modal-category-badge">
+              {project.category || "AI Project"}
+            </span>
             <h2 id="modal-title" className="modal-project-title">
               {project.projectName}
             </h2>
           </div>
-          <button className="modal-close-btn" onClick={onClose} aria-label="Close dialog">
+          <button
+            className="modal-close-btn"
+            onClick={onClose}
+            aria-label="Close dialog"
+          >
             &times;
           </button>
         </div>
@@ -53,7 +59,8 @@ export default function ProjectModal({ project, isOpen, onClose, isDark }) {
           {project.metrics && project.metrics.length > 0 && (
             <div className="metrics-section">
               <h3 className="section-heading">
-                <i className="fas fa-chart-line heading-icon"></i> Performance & Model Metrics
+                <i className="fas fa-chart-line heading-icon"></i> Performance &
+                Model Metrics
               </h3>
               <div className="metrics-grid">
                 {project.metrics.map((metric, i) => (
@@ -70,7 +77,8 @@ export default function ProjectModal({ project, isOpen, onClose, isDark }) {
           {project.highlights && project.highlights.length > 0 && (
             <div className="highlights-section">
               <h3 className="section-heading">
-                <i className="fas fa-microchip heading-icon"></i> Architecture & Technical Highlights
+                <i className="fas fa-microchip heading-icon"></i> Architecture &
+                Technical Highlights
               </h3>
               <ul className="highlights-list">
                 {project.highlights.map((item, idx) => (
@@ -87,7 +95,8 @@ export default function ProjectModal({ project, isOpen, onClose, isDark }) {
           {project.techStack && (
             <div className="modal-tech-section">
               <h3 className="section-heading">
-                <i className="fas fa-layer-group heading-icon"></i> Tech Stack & Frameworks
+                <i className="fas fa-layer-group heading-icon"></i> Tech Stack &
+                Frameworks
               </h3>
               <div className="modal-tech-pills">
                 {project.techStack.map((tech, idx) => (

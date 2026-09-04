@@ -126,10 +126,18 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
-  .python-ic { color: #3776ab; }
-  .aws-ic { color: #ff9900; }
-  .tf-ic { color: #ee4c2c; }
-  .sql-ic { color: #336791; }
+  .python-ic {
+    color: #3776ab;
+  }
+  .aws-ic {
+    color: #ff9900;
+  }
+  .tf-ic {
+    color: #ee4c2c;
+  }
+  .sql-ic {
+    color: #336791;
+  }
 }
 
 .highlight-chip {
@@ -281,7 +289,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(2, 132, 199, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(2, 132, 199, 0.15) 1px,
+    transparent 1px
+  );
   background-size: 24px 24px;
   opacity: 0.6;
 }
@@ -321,15 +332,34 @@
     justify-content: center;
     font-size: 0.9rem;
 
-    &.node-1 { top: -16px; left: 50%; transform: translateX(-50%); color: #3776ab; }
-    &.node-2 { bottom: -16px; left: 50%; transform: translateX(-50%); color: #ff9900; }
-    &.node-3 { top: 50%; right: -16px; transform: translateY(-50%); color: #0284c7; }
+    &.node-1 {
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #3776ab;
+    }
+    &.node-2 {
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ff9900;
+    }
+    &.node-3 {
+      top: 50%;
+      right: -16px;
+      transform: translateY(-50%);
+      color: #0284c7;
+    }
   }
 }
 
 @keyframes rotateOrbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .profile-avatar-wrapper {
@@ -339,7 +369,8 @@
   border-radius: 50%;
   padding: 8px;
   background: linear-gradient(135deg, #0284c7, #38bdf8, #ff9900);
-  box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.35), 0 0 35px rgba(255, 153, 0, 0.25);
+  box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.35),
+    0 0 35px rgba(255, 153, 0, 0.25);
   animation: floatHero 6s ease-in-out infinite;
   display: flex;
   align-items: center;
@@ -430,7 +461,7 @@
   width: 220px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   z-index: 3;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   animation: floatAnimation 6s ease-in-out infinite 2s;
 
   .code-header {
@@ -443,9 +474,15 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      &.dot-r { background: #ef4444; }
-      &.dot-y { background: #f59e0b; }
-      &.dot-g { background: #10b981; }
+      &.dot-r {
+        background: #ef4444;
+      }
+      &.dot-y {
+        background: #f59e0b;
+      }
+      &.dot-g {
+        background: #10b981;
+      }
     }
 
     .file-name {
@@ -462,13 +499,19 @@
     font-size: 0.7rem;
     color: #e2e8f0;
 
-    .kw { color: #f472b6; font-weight: 600; }
-    .str { color: #34d399; }
+    .kw {
+      color: #f472b6;
+      font-weight: 600;
+    }
+    .str {
+      color: #34d399;
+    }
   }
 }
 
 @keyframes floatHero {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {

@@ -1,15 +1,21 @@
 import React from "react";
 import "./Skills.scss";
-import { detailedSkills, cloudWorkflow } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {detailedSkills, cloudWorkflow} from "../../portfolio";
+import {Fade} from "react-reveal";
 
 export default function Skills() {
-  const renderSkillIcon = (iconType) => {
+  const renderSkillIcon = iconType => {
     if (iconType === "python") {
       return (
         <svg viewBox="0 0 24 24" width="36" height="36">
-          <path d="M11.9 2c-5.2 0-4.9 2.3-4.9 2.3v2.4h5v.7H4.9S2.6 7.1 2.6 12.3c0 5.2 2 5 2 5h1.2v-2.4s-.1-2.9 2.8-2.9h4.8s2.7.1 2.7-2.6V4.6S17.1 2 11.9 2zm-2.7 1.6c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z" fill="#387EB8"/>
-          <path d="M12.1 22c5.2 0 4.9-2.3 4.9-2.3v-2.4h-5v-.7h7.1s2.3.3 2.3-4.9c0-5.2-2-5-2-5h-1.2v2.4s.1 2.9-2.8 2.9h-4.8s-2.7-.1-2.7 2.6v4.8s-1 2.6 4.2 2.6zm2.7-1.6c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z" fill="#FFE052"/>
+          <path
+            d="M11.9 2c-5.2 0-4.9 2.3-4.9 2.3v2.4h5v.7H4.9S2.6 7.1 2.6 12.3c0 5.2 2 5 2 5h1.2v-2.4s-.1-2.9 2.8-2.9h4.8s2.7.1 2.7-2.6V4.6S17.1 2 11.9 2zm-2.7 1.6c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"
+            fill="#387EB8"
+          />
+          <path
+            d="M12.1 22c5.2 0 4.9-2.3 4.9-2.3v-2.4h-5v-.7h7.1s2.3.3 2.3-4.9c0-5.2-2-5-2-5h-1.2v2.4s.1 2.9-2.8 2.9h-4.8s-2.7-.1-2.7 2.6v4.8s-1 2.6 4.2 2.6zm2.7-1.6c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"
+            fill="#FFE052"
+          />
         </svg>
       );
     } else if (iconType === "aws") {
@@ -26,7 +32,9 @@ export default function Skills() {
     <Fade bottom duration={1000} distance="20px">
       <section className="section-container" id="skills">
         <div className="skills-section-wrapper">
-          <h2 className="section-title">Domain Expertise &amp; Hands-on Projects</h2>
+          <h2 className="section-title">
+            Domain Expertise &amp; Hands-on Projects
+          </h2>
 
           {/* Clean 2x2 Grid of Skill Cards */}
           <div className="skills-grid-2x2">
@@ -43,7 +51,9 @@ export default function Skills() {
                 </div>
 
                 <div className="skill-card-content">
-                  <h4 className="card-subheading">Key Highlights &amp; Projects</h4>
+                  <h4 className="card-subheading">
+                    Key Highlights &amp; Projects
+                  </h4>
                   <ul className="skill-bullets-list">
                     {skill.whatIBuilt.map((item, itemIdx) => (
                       <li key={itemIdx}>
@@ -75,9 +85,16 @@ export default function Skills() {
                   <div className="pipeline-step">
                     <div className={`step-icon-box box-${step.icon}`}>
                       {step.icon === "s3" && (
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFFFFF" strokeWidth="2">
-                          <path d="M4 6h16v12C20 19.1 16.4 20 12 20S4 19.1 4 18V6z"/>
-                          <ellipse cx="12" cy="6" rx="8" ry="3"/>
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          stroke="#FFFFFF"
+                          strokeWidth="2"
+                        >
+                          <path d="M4 6h16v12C20 19.1 16.4 20 12 20S4 19.1 4 18V6z" />
+                          <ellipse cx="12" cy="6" rx="8" ry="3" />
                         </svg>
                       )}
                       {step.icon === "lambda" && (

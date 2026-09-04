@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Philosophy from "../components/philosophy/Philosophy";
@@ -13,14 +13,15 @@ import StatsBar from "../components/statsBar/StatsBar";
 import Footer from "../components/footer/Footer";
 import ScrollToTopButton from "./topbutton/Top";
 import SplashScreen from "./splashScreen/SplashScreen";
-import { splashScreen } from "../portfolio";
-import { StyleProvider } from "../contexts/StyleContext";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import {splashScreen} from "../portfolio";
+import {StyleProvider} from "../contexts/StyleContext";
+import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
   const [isDark, setIsDark] = useLocalStorage("isDark", false);
-  const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
+  const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
+    useState(true);
 
   useEffect(() => {
     if (splashScreen.enabled) {
@@ -40,7 +41,7 @@ const Main = () => {
 
   return (
     <div className="aws-theme-wrapper">
-      <StyleProvider value={{ isDark: isDark, changeTheme: changeTheme }}>
+      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (

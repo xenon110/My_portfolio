@@ -58,9 +58,15 @@
 .skill-brand-icon {
   font-size: 2.2rem;
 
-  &.aws-color { color: $awsOrange; }
-  &.docker-color { color: #2496ed; }
-  &.tf-color { color: #10b981; }
+  &.aws-color {
+    color: $awsOrange;
+  }
+  &.docker-color {
+    color: #2496ed;
+  }
+  &.tf-color {
+    color: #10b981;
+  }
 }
 
 .skill-header-meta {
@@ -209,11 +215,21 @@
   color: #ffffff;
   margin-bottom: 8px;
 
-  &.box-s3 { background-color: #22c55e; }
-  &.box-lambda { background-color: #f97316; }
-  &.box-sagemaker { background-color: #10b981; }
-  &.box-cloudwatch { background-color: #ec4899; }
-  &.box-quicksight { background-color: #7c3aed; }
+  &.box-s3 {
+    background-color: #22c55e;
+  }
+  &.box-lambda {
+    background-color: #f97316;
+  }
+  &.box-sagemaker {
+    background-color: #10b981;
+  }
+  &.box-cloudwatch {
+    background-color: #ec4899;
+  }
+  &.box-quicksight {
+    background-color: #7c3aed;
+  }
 }
 
 .lambda-symbol {

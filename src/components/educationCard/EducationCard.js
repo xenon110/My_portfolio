@@ -43,7 +43,10 @@ export default function EducationCard({school}) {
                 />
               ) : (
                 <div className="education-logo-badge">
-                  <i className="fas fa-graduation-cap" style={{ fontSize: "26px", color: "#FF9900" }}></i>
+                  <i
+                    className="fas fa-graduation-cap"
+                    style={{fontSize: "26px", color: "#FF9900"}}
+                  ></i>
                 </div>
               )}
             </div>
@@ -71,7 +74,9 @@ export default function EducationCard({school}) {
               <p className="education-text-desc">{school.desc}</p>
               <div className="education-text-bullets">
                 <ul>
-                  <GetDescBullets descBullets={school.bullets || school.descBullets} />
+                  <GetDescBullets
+                    descBullets={school.bullets || school.descBullets}
+                  />
                 </ul>
               </div>
             </div>

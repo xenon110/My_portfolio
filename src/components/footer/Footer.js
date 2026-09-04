@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./Footer.scss";
-import { greeting, contactInfo } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {greeting, contactInfo} from "../../portfolio";
+import {Fade} from "react-reveal";
 import mayankProfileImg from "../../assets/images/mayank_profile.png";
 
 export default function Footer() {
   const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = (e) => {
+  const handleCopyEmail = e => {
     e.preventDefault();
     if (contactInfo.email_address) {
       navigator.clipboard.writeText(contactInfo.email_address);
@@ -31,20 +31,36 @@ export default function Footer() {
               <h3 className="footer-brand-title">{greeting.username}</h3>
             </div>
             <p className="footer-role-text">{greeting.tagline}</p>
-            <p className="footer-subtext">Building data-driven solutions with ML and Cloud.</p>
+            <p className="footer-subtext">
+              Building data-driven solutions with ML and Cloud.
+            </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="footer-col links-col">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><a href="#greeting">Home</a></li>
-              <li><a href="#workExperience">Experience</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#research">Research</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#achievements">Achievements</a></li>
+              <li>
+                <a href="#greeting">Home</a>
+              </li>
+              <li>
+                <a href="#workExperience">Experience</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#research">Research</a>
+              </li>
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+              <li>
+                <a href="#education">Education</a>
+              </li>
+              <li>
+                <a href="#achievements">Achievements</a>
+              </li>
             </ul>
           </div>
 
@@ -54,7 +70,9 @@ export default function Footer() {
             <ul className="connect-info-list">
               <li className="email-copy-row">
                 <i className="far fa-envelope connect-icon"></i>
-                <a href={`mailto:${contactInfo.email_address}`}>{contactInfo.email_address}</a>
+                <a href={`mailto:${contactInfo.email_address}`}>
+                  {contactInfo.email_address}
+                </a>
                 <button
                   className="copy-email-btn"
                   onClick={handleCopyEmail}
@@ -76,13 +94,29 @@ export default function Footer() {
               </li>
               <li>
                 <i className="fab fa-linkedin connect-icon"></i>
-                <a href={contactInfo.linkedin.startsWith("http") ? contactInfo.linkedin : `https://${contactInfo.linkedin}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={
+                    contactInfo.linkedin.startsWith("http")
+                      ? contactInfo.linkedin
+                      : `https://${contactInfo.linkedin}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {contactInfo.linkedin}
                 </a>
               </li>
               <li>
                 <i className="fab fa-github connect-icon"></i>
-                <a href={contactInfo.github.startsWith("http") ? contactInfo.github : `https://${contactInfo.github}`} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={
+                    contactInfo.github.startsWith("http")
+                      ? contactInfo.github
+                      : `https://${contactInfo.github}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {contactInfo.github}
                 </a>
               </li>

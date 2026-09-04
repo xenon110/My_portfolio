@@ -46,7 +46,11 @@
 }
 
 .dark-rectangle {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.65) 0%, rgba(15, 23, 42, 0.75) 100%);
+  background: linear-gradient(
+    145deg,
+    rgba(30, 41, 59, 0.65) 0%,
+    rgba(15, 23, 42, 0.75) 100%
+  );
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
@@ -54,7 +58,8 @@
 
 .dark-rectangle:hover {
   border-color: rgba(236, 72, 153, 0.4);
-  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15), 0 0 20px rgba(168, 85, 247, 0.1);
+  box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15),
+    0 0 20px rgba(168, 85, 247, 0.1);
 }
 
 /* Header Badge & Chip */
@@ -69,7 +74,11 @@
   width: 54px;
   height: 54px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(236, 72, 153, 0.15) 0%,
+    rgba(168, 85, 247, 0.15) 100%
+  );
   border: 1px solid rgba(236, 72, 153, 0.3);
   display: flex;
   align-items: center;

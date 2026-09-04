@@ -13,7 +13,11 @@ export default function BlogCard({blog, isDark}) {
 
   return (
     <div
-      className={isDark ? "blog-container blog-card-dark" : "blog-container blog-card-light"}
+      className={
+        isDark
+          ? "blog-container blog-card-dark"
+          : "blog-container blog-card-light"
+      }
       onClick={() => openUrlInNewTab(blog.url, blog.title)}
     >
       <div className="blog-top-header">

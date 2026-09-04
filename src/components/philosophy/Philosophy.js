@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
+import React, {useContext} from "react";
 import "./Philosophy.scss";
-import { engineeringPhilosophy } from "../../portfolio";
-import { Fade } from "react-reveal";
+import {engineeringPhilosophy} from "../../portfolio";
+import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Philosophy() {
-  const { isDark } = useContext(StyleContext);
+  const {isDark} = useContext(StyleContext);
 
   if (!engineeringPhilosophy || !engineeringPhilosophy.display) {
     return null;
   }
 
-  const renderIcon = (iconName) => {
+  const renderIcon = iconName => {
     if (iconName === "code") {
       return <i className="fas fa-code philosophy-icon"></i>;
     } else if (iconName === "aws") {
@@ -31,7 +31,8 @@ export default function Philosophy() {
             {engineeringPhilosophy.title || "Core Engineering Principles"}
           </h2>
           <p className="section-subtitle-text">
-            {engineeringPhilosophy.subtitle || "How I approach Software Engineering, Data Science & AWS Architecture"}
+            {engineeringPhilosophy.subtitle ||
+              "How I approach Software Engineering, Data Science & AWS Architecture"}
           </p>
         </div>
 

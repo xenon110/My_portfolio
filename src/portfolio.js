@@ -11,7 +11,8 @@ const splashScreen = {
 const greeting = {
   username: "Mayank Raj",
   tagline: "SOFTWARE ENGINEER | DATA SCIENCE & AWS ENTHUSIAST",
-  title: "Building scalable software, data science solutions & AWS Cloud infrastructure",
+  title:
+    "Building scalable software, data science solutions & AWS Cloud infrastructure",
   subTitle:
     "Software Engineer with a deep passion for Data Science, Machine Learning, and AWS Cloud Architecture. Experienced in building robust software systems, data pipelines, ML models, and deploying scalable cloud applications on AWS.",
   resumeLink:
@@ -29,17 +30,17 @@ const socialMediaLinks = {
 
 // Technologies I Work With
 const technologiesIWorkWith = [
-  { name: "Machine Learning", icon: "brain", color: "#FF9900" },
-  { name: "Data Science", icon: "chart", color: "#0284C7" },
-  { name: "Python", icon: "python", color: "#3776AB" },
-  { name: "SQL", icon: "sql", color: "#336791" },
-  { name: "Pandas", icon: "pandas", color: "#150458" },
-  { name: "NumPy", icon: "numpy", color: "#013243" },
-  { name: "Scikit-learn", icon: "sklearn", color: "#F7931E" },
-  { name: "TensorFlow", icon: "tensorflow", color: "#FF6F00" },
-  { name: "PyTorch", icon: "pytorch", color: "#EE4C2C" },
-  { name: "AWS", icon: "aws", color: "#FF9900" },
-  { name: "Git", icon: "git", color: "#F05032" }
+  {name: "Machine Learning", icon: "brain", color: "#FF9900"},
+  {name: "Data Science", icon: "chart", color: "#0284C7"},
+  {name: "Python", icon: "python", color: "#3776AB"},
+  {name: "SQL", icon: "sql", color: "#336791"},
+  {name: "Pandas", icon: "pandas", color: "#150458"},
+  {name: "NumPy", icon: "numpy", color: "#013243"},
+  {name: "Scikit-learn", icon: "sklearn", color: "#F7931E"},
+  {name: "TensorFlow", icon: "tensorflow", color: "#FF6F00"},
+  {name: "PyTorch", icon: "pytorch", color: "#EE4C2C"},
+  {name: "AWS", icon: "aws", color: "#FF9900"},
+  {name: "Git", icon: "git", color: "#F05032"}
 ];
 
 // Detailed Skills Section
@@ -124,14 +125,16 @@ const cloudWorkflow = {
       icon: "quicksight"
     }
   ],
-  footerText: "I design, build and deploy end-to-end machine learning solutions on AWS."
+  footerText:
+    "I design, build and deploy end-to-end machine learning solutions on AWS."
 };
 
 // Engineering Philosophy & Pillars
 const engineeringPhilosophy = {
   display: false,
   title: "Core Engineering Principles",
-  subtitle: "How I approach Software Development, Data Science & AWS Infrastructure",
+  subtitle:
+    "How I approach Software Development, Data Science & AWS Infrastructure",
   pillars: [
     {
       icon: "code",
@@ -214,14 +217,21 @@ const bigProjects = {
       projectName: "MediSkin - AI-Based Skin Disease Detection",
       projectDesc:
         "AI-powered medical image classification system for identifying skin diseases using CNNs and transfer learning (MobileNetV2) with 88.92% accuracy, integrated with real-time inference and healthcare platform.",
-      techStack: ["Python", "TensorFlow", "Deep Learning", "Computer Vision", "React.js", "Firebase"],
+      techStack: [
+        "Python",
+        "TensorFlow",
+        "Deep Learning",
+        "Computer Vision",
+        "React.js",
+        "Firebase"
+      ],
       githubUrl: "https://github.com/xenon110/Mediskin",
       liveUrl: "https://github.com/xenon110/Mediskin",
       metrics: [
-        { label: "Classification Accuracy", value: "88.92%" },
-        { label: "Inference Latency", value: "< 120ms" },
-        { label: "Model Architecture", value: "MobileNetV2" },
-        { label: "Disease Classes", value: "7 Types" }
+        {label: "Classification Accuracy", value: "88.92%"},
+        {label: "Inference Latency", value: "< 120ms"},
+        {label: "Model Architecture", value: "MobileNetV2"},
+        {label: "Disease Classes", value: "7 Types"}
       ],
       highlights: [
         "Implemented MobileNetV2 CNN transfer learning optimized for medical image diagnostic accuracy.",
@@ -235,14 +245,22 @@ const bigProjects = {
       projectName: "Veyra - AI Email Analytics Platform",
       projectDesc:
         "AI email processing system leveraging LLMs for natural language analysis, semantic categorization, inbox organization, and user analytics with 50+ active users in production.",
-      techStack: ["Python", "FastAPI", "NLP", "Gemini API", "Gmail API", "PostgreSQL", "Supabase"],
+      techStack: [
+        "Python",
+        "FastAPI",
+        "NLP",
+        "Gemini API",
+        "Gmail API",
+        "PostgreSQL",
+        "Supabase"
+      ],
       githubUrl: "https://github.com/xenon110/Veyra",
       liveUrl: "https://github.com/xenon110/Veyra",
       metrics: [
-        { label: "Active Users", value: "50+ Users" },
-        { label: "LLM Backend", value: "Gemini 1.5" },
-        { label: "Categorization Precision", value: "94.5%" },
-        { label: "Emails Processed", value: "10,000+" }
+        {label: "Active Users", value: "50+ Users"},
+        {label: "LLM Backend", value: "Gemini 1.5"},
+        {label: "Categorization Precision", value: "94.5%"},
+        {label: "Emails Processed", value: "10,000+"}
       ],
       highlights: [
         "Utilized Gemini 1.5 Pro API for zero-shot email categorization and automatic priority tagging.",
@@ -256,14 +274,20 @@ const bigProjects = {
       projectName: "Scan2Eat - AI Nutrition & Food Safety Analyzer",
       projectDesc:
         "AI-powered application processing food images, ingredient information, and barcodes using OpenCV and ML to analyze nutritional characteristics and dietary risks.",
-      techStack: ["Python", "Machine Learning", "OpenCV", "Computer Vision", "React Native"],
+      techStack: [
+        "Python",
+        "Machine Learning",
+        "OpenCV",
+        "Computer Vision",
+        "React Native"
+      ],
       githubUrl: "https://github.com/xenon110/Scan2Eat",
       liveUrl: "https://github.com/xenon110/Scan2Eat",
       metrics: [
-        { label: "OCR Accuracy", value: "91.2%" },
-        { label: "Ingredient DB", value: "5,000+ Items" },
-        { label: "Risk Analysis Time", value: "0.4s" },
-        { label: "Platform", value: "Cross-Platform" }
+        {label: "OCR Accuracy", value: "91.2%"},
+        {label: "Ingredient DB", value: "5,000+ Items"},
+        {label: "Risk Analysis Time", value: "0.4s"},
+        {label: "Platform", value: "Cross-Platform"}
       ],
       highlights: [
         "Integrated OpenCV & Tesseract OCR for extracting raw text from complex food label images.",
@@ -277,14 +301,21 @@ const bigProjects = {
       projectName: "Task Management Platform",
       projectDesc:
         "Data-driven enterprise collaboration system for collecting employee activity, attendance, workflow status, automated escalation, and real-time operational analytics.",
-      techStack: ["Python", "React.js", "Node.js", "PostgreSQL", "Firebase", "REST APIs"],
+      techStack: [
+        "Python",
+        "React.js",
+        "Node.js",
+        "PostgreSQL",
+        "Firebase",
+        "REST APIs"
+      ],
       githubUrl: "https://github.com/xenon110/Task_Management_BKM",
       liveUrl: "https://github.com/xenon110/Task_Management_BKM",
       metrics: [
-        { label: "User Roles", value: "RBAC System" },
-        { label: "Database", value: "PostgreSQL" },
-        { label: "Sync Speed", value: "< 50ms" },
-        { label: "Escalation Automation", value: "100%" }
+        {label: "User Roles", value: "RBAC System"},
+        {label: "Database", value: "PostgreSQL"},
+        {label: "Sync Speed", value: "< 50ms"},
+        {label: "Escalation Automation", value: "100%"}
       ],
       highlights: [
         "Designed relational database schema in PostgreSQL with role-based authorization rules.",
@@ -301,7 +332,8 @@ const researchSection = {
   display: true,
   title: "Research & Publications",
   paper: {
-    title: "Energy Optimization in Data Centers: Reducing Consumption While Maintaining Efficiency",
+    title:
+      "Energy Optimization in Data Centers: Reducing Consumption While Maintaining Efficiency",
     institution: "Vellore Institute of Technology AP (VIT-AP University)",
     desc: "Conducted research on data-driven approaches for reducing energy consumption in large-scale data centers while maintaining computational performance, reliability, and service efficiency.",
     highlights: [
@@ -356,17 +388,20 @@ const educationInfo = {
 const achievementSection = {
   display: true,
   title: "Certifications & Achievements",
-  subtitle: "Competitive exams qualified, AWS & tech certifications, and honors",
+  subtitle:
+    "Competitive exams qualified, AWS & tech certifications, and honors",
   achievementsCards: [
     {
       title: "GATE 2025 & GATE 2026 Qualified",
-      subtitle: "Qualified Graduate Aptitude Test in Engineering (Computer Science)",
+      subtitle:
+        "Qualified Graduate Aptitude Test in Engineering (Computer Science)",
       tag: "National Exam",
       icon: "certificate"
     },
     {
       title: "BARC Exam Qualified",
-      subtitle: "Bhabha Atomic Research Centre (BARC) Scientific Officer Exam Qualified",
+      subtitle:
+        "Bhabha Atomic Research Centre (BARC) Scientific Officer Exam Qualified",
       tag: "Government Exam",
       icon: "atom"
     },
@@ -390,13 +425,15 @@ const achievementSection = {
     },
     {
       title: "500+ LeetCode DSA Problems Solved",
-      subtitle: "Solved 500+ Data Structures & Algorithms problems across various difficulty levels",
+      subtitle:
+        "Solved 500+ Data Structures & Algorithms problems across various difficulty levels",
       tag: "DSA & Problem Solving",
       icon: "code"
     },
     {
       title: "Top 10 AI/ML Projects Award & Hackathon Winner",
-      subtitle: "Top 10 AI/ML Projects Award at VIT-AP & Hackathon Winner for Innovation in Applied Machine Learning",
+      subtitle:
+        "Top 10 AI/ML Projects Award at VIT-AP & Hackathon Winner for Innovation in Applied Machine Learning",
       tag: "Awards & Honors",
       icon: "trophy"
     }
@@ -447,16 +484,16 @@ const contactInfo = {
   github: "github.com/xenon110"
 };
 
-const skillsSection = { display: true };
-const blogSection = { display: false };
-const talkSection = { display: false };
-const illustration = { animated: false };
-const openSource = { display: false };
-const techStack = { display: false };
-const podcastSection = { display: false };
-const twitterDetails = { display: false };
+const skillsSection = {display: true};
+const blogSection = {display: false};
+const talkSection = {display: false};
+const illustration = {animated: false};
+const openSource = {display: false};
+const techStack = {display: false};
+const podcastSection = {display: false};
+const twitterDetails = {display: false};
 const isHireable = true;
-const resumeSection = { display: true };
+const resumeSection = {display: true};
 
 export {
   illustration,
