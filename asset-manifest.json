@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.8a03d4ea.css",
-    "main.js": "./static/js/main.5b9d66e3.js",
-    "static/media/mayank_profile.png": "./static/media/mayank_profile.88ddc83e043ddb927931.png",
-    "static/media/vitap.jpg": "./static/media/vitap.10f92c325185f170c010.jpg",
-    "static/media/jnv.jpg": "./static/media/jnv.c74fa6da568aa4c8f5b5.jpg",
+    "main.css": "./static/css/main.7b364e53.css",
+    "main.js": "./static/js/main.16c96d5d.js",
+    "static/media/mayank_profile.png": "./static/media/mayank_profile.21ffb169d0391a7c88a1.png",
     "index.html": "./index.html",
-    "main.8a03d4ea.css.map": "./static/css/main.8a03d4ea.css.map",
-    "main.5b9d66e3.js.map": "./static/js/main.5b9d66e3.js.map"
+    "main.7b364e53.css.map": "./static/css/main.7b364e53.css.map",
+    "main.16c96d5d.js.map": "./static/js/main.16c96d5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a03d4ea.css",
-    "static/js/main.5b9d66e3.js"
+    "static/css/main.7b364e53.css",
+    "static/js/main.16c96d5d.js"
   ]
 }
