@@ -1,20 +1,551 @@
-@import "../_globalColor";
-
-body,
+// Pure Black Minimalist Timeline Theme
 html,
+body,
 #root {
-  background-color: #ffffff !important;
-  color: #161e2d !important;
+  background-color: #000000 !important;
+  color: #ededed !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-.dark-mode {
-  background-color: #ffffff !important;
-  color: #161e2d !important;
+// Scroll Reveal Animations (Subtle, sleek fade-in-up)
+.reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.aws-theme-wrapper {
-  background-color: #ffffff !important;
-  color: #161e2d !important;
+@keyframes livePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.plain-portfolio {
+  background-color: #000000;
+  color: #ededed;
   min-height: 100vh;
   width: 100%;
+  padding: 64px 24px 110px 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .plain-container {
+    width: 100%;
+    max-width: 780px;
+  }
+
+  // Top Profile Section (Picture on one side, plain text on the other)
+  .profile-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #1c1c20;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile-photo-wrapper {
+      flex-shrink: 0;
+
+      .profile-photo {
+        width: 116px;
+        height: 116px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 1px solid #27272a;
+        background-color: #09090b;
+        display: block;
+        filter: grayscale(10%);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:hover {
+          filter: grayscale(0%);
+          border-color: #52525b;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+        }
+      }
+    }
+
+    .profile-details {
+      flex: 1;
+
+      .name-heading {
+        font-size: 2.1rem;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        color: #ffffff;
+        margin: 0 0 6px 0;
+        line-height: 1.15;
+      }
+
+      .tagline {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.85rem;
+        color: #a1a1aa;
+        letter-spacing: 0.03em;
+        margin: 0 0 12px 0;
+      }
+
+      .status-line {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.825rem;
+        color: #d4d4d8;
+        background-color: #0c0c0e;
+        border: 1px solid #27272a;
+        padding: 3px 10px;
+        border-radius: 9999px;
+        margin-bottom: 14px;
+
+        .status-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #22c55e;
+          animation: livePulse 2s infinite ease-in-out;
+        }
+      }
+
+      .bio-text {
+        font-size: 0.94rem;
+        color: #a1a1aa;
+        margin: 0 0 16px 0;
+        line-height: 1.65;
+      }
+
+      .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.825rem;
+
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          border-bottom: 1px solid #3f3f46;
+          padding-bottom: 2px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: #38bdf8;
+            border-bottom-color: #38bdf8;
+          }
+        }
+
+        .meta-tag {
+          color: #71717a;
+        }
+      }
+    }
+  }
+
+  // Straight Timeline Spine (Line running down the left side)
+  .timeline-spine {
+    position: relative;
+    margin-top: 48px;
+    margin-left: 8px;
+    padding-left: 32px;
+    border-left: 1px solid #27272a;
+
+    @media (max-width: 600px) {
+      margin-left: 4px;
+      padding-left: 22px;
+    }
+
+    // Section Block
+    .timeline-section {
+      margin-bottom: 56px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // Bold, Bigger Section Header with Cool Visual Treatment
+      .section-header {
+        position: relative;
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 0 0 28px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #18181b;
+
+        .section-node {
+          position: absolute;
+          left: -39px;
+          top: 7px;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background-color: #000000;
+          border: 2px solid #ffffff;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+          transition: all 0.25s ease;
+
+          @media (max-width: 600px) {
+            left: -29px;
+          }
+        }
+
+        .section-index {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          font-size: 0.9rem;
+          font-weight: 700;
+          color: #71717a;
+          letter-spacing: 0.08em;
+        }
+
+        .section-title {
+          font-size: 1.35rem;
+          font-weight: 800;
+          letter-spacing: -0.025em;
+          color: #ffffff;
+          text-transform: uppercase;
+        }
+      }
+
+      // Individual Timeline Entry
+      .timeline-entry {
+        position: relative;
+        margin-bottom: 32px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .entry-node {
+          position: absolute;
+          left: -36.5px;
+          top: 8px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #000000;
+          border: 1.5px solid #52525b;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+          @media (max-width: 600px) {
+            left: -26.5px;
+          }
+        }
+
+        &:hover .entry-node {
+          border-color: #ffffff;
+          background-color: #ffffff;
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+          transform: scale(1.3);
+        }
+
+        .entry-title-row {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 4px;
+
+          .entry-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.015em;
+          }
+
+          .entry-date {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.8rem;
+            color: #71717a;
+          }
+        }
+
+        .entry-subtitle {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+          font-size: 0.85rem;
+          color: #a1a1aa;
+          margin-bottom: 8px;
+        }
+
+        .entry-desc {
+          font-size: 0.92rem;
+          color: #a1a1aa;
+          margin: 0 0 8px 0;
+          line-height: 1.65;
+        }
+
+        .entry-bullets {
+          margin: 6px 0 12px 0;
+          padding-left: 18px;
+          color: #a1a1aa;
+          font-size: 0.885rem;
+          line-height: 1.65;
+
+          li {
+            margin-bottom: 5px;
+          }
+        }
+
+        // Metrics Row (Data points styled as cool monospace tags)
+        .entry-metrics {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 12px 0;
+
+          .metric-badge {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.775rem;
+            color: #e4e4e7;
+            background-color: #0c0c0e;
+            border: 1px solid #27272a;
+            padding: 4px 10px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+
+            &:hover {
+              border-color: #52525b;
+              background-color: #121216;
+            }
+
+            .metric-label {
+              color: #71717a;
+            }
+
+            .metric-value {
+              color: #ffffff;
+              font-weight: 600;
+            }
+          }
+        }
+
+        // Tech and Action Links
+        .entry-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-top: 12px;
+          padding-top: 8px;
+          border-top: 1px dashed #1c1c20;
+
+          .entry-links {
+            display: flex;
+            gap: 14px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.825rem;
+
+            a {
+              color: #ffffff;
+              text-decoration: none;
+              border-bottom: 1px solid #3f3f46;
+              padding-bottom: 2px;
+              transition: all 0.2s ease;
+
+              &:hover {
+                color: #38bdf8;
+                border-bottom-color: #38bdf8;
+              }
+            }
+          }
+
+          .entry-tech {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.775rem;
+            color: #71717a;
+          }
+        }
+      }
+
+      // Skills Plain Text Grid with Tech Accents
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        .skill-group {
+          font-size: 0.9rem;
+          padding: 10px 14px;
+          background-color: #08080a;
+          border: 1px solid #1c1c20;
+          border-radius: 6px;
+          transition: border-color 0.2s ease;
+
+          &:hover {
+            border-color: #27272a;
+          }
+
+          .skill-category {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.825rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            &::before {
+              content: ">";
+              color: #38bdf8;
+              font-weight: bold;
+            }
+          }
+
+          .skill-items {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.825rem;
+            color: #a1a1aa;
+            line-height: 1.6;
+          }
+        }
+      }
+
+      // Achievements Plain List
+      .achievements-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .achievement-row {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 6px;
+          font-size: 0.92rem;
+          padding-bottom: 8px;
+          border-bottom: 1px dashed #18181b;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .achievement-title {
+            color: #ffffff;
+            font-weight: 600;
+          }
+
+          .achievement-tag {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.775rem;
+            color: #38bdf8;
+            background-color: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 1px 6px;
+            border-radius: 4px;
+          }
+
+          .achievement-desc {
+            width: 100%;
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            margin-top: 4px;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      // Contact Section Details
+      .contact-details {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.88rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .contact-row {
+          display: flex;
+          gap: 14px;
+          color: #a1a1aa;
+
+          .contact-key {
+            color: #71717a;
+            width: 86px;
+            font-weight: 600;
+          }
+
+          a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #3f3f46;
+            transition: all 0.2s ease;
+
+            &:hover {
+              color: #38bdf8;
+              border-bottom-color: #38bdf8;
+            }
+          }
+        }
+      }
+    }
+
+    // Timeline End Marker
+    .timeline-end {
+      position: relative;
+      padding-top: 24px;
+
+      .end-node {
+        position: absolute;
+        left: -37px;
+        top: 28px;
+        width: 9px;
+        height: 9px;
+        background-color: #52525b;
+        border-radius: 1px;
+
+        @media (max-width: 600px) {
+          left: -27px;
+        }
+      }
+
+      .end-text {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.775rem;
+        color: #52525b;
+      }
+    }
+  }
 }

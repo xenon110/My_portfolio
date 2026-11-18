@@ -24,6 +24,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/xenon110",
   linkedin: "https://www.linkedin.com/in/mayank-raj-b8b312272/",
+  kaggle: "https://www.kaggle.com/raj110",
   gmail: "mayankrajdto@gmail.com",
   display: true
 };
@@ -360,7 +361,7 @@ const educationInfo = {
       ]
     },
     {
-      schoolName: "MKC (Senior Secondary School)",
+      schoolName: "Majdoor Kishan College",
       logo: "school",
       subHeader: "Class XII (Senior Secondary)",
       duration: "2020 – 2022",
@@ -481,7 +482,8 @@ const contactInfo = {
   phone: "9508303814",
   location: "Palamu, JH, India",
   linkedin: "linkedin.com/in/mayank-raj-b8b312272",
-  github: "github.com/xenon110"
+  github: "github.com/xenon110",
+  kaggle: "kaggle.com/raj110"
 };
 
 const skillsSection = {display: true};
