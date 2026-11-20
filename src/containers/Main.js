@@ -1,15 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./Main.scss";
-import {
-  greeting,
-  socialMediaLinks,
-  workExperiences,
-  bigProjects,
-  researchSection,
-  achievementSection,
-  educationInfo,
-  contactInfo
-} from "../portfolio";
+import {greeting, socialMediaLinks, contactInfo} from "../portfolio";
 import mayankProfileImg from "../assets/images/mayank_profile.png";
 
 // Lightweight Scroll-Reveal component using native IntersectionObserver
@@ -31,7 +22,7 @@ const Reveal = ({children, className = "", delay = 0}) => {
       },
       {
         threshold: 0.08,
-        rootMargin: "0px 0px -30px 0px"
+        rootMargin: "0px 0px -20px 0px"
       }
     );
 
@@ -64,7 +55,7 @@ const Main = () => {
   return (
     <div className="plain-portfolio">
       <div className="plain-container">
-        {/* Top Profile Intro: Picture on one side, plain text with all info */}
+        {/* Top Profile Intro: Clean, readable, crisp */}
         <Reveal>
           <header className="profile-intro">
             <div className="profile-photo-wrapper">
@@ -77,14 +68,20 @@ const Main = () => {
 
             <div className="profile-details">
               <h1 className="name-heading">{greeting.username}</h1>
-              <div className="tagline">{greeting.tagline}</div>
+              <div className="tagline">
+                Software Engineer • Data Science &amp; AWS Cloud
+              </div>
 
               <div className="status-line">
                 <span className="status-dot"></span>
-                <span>Open to Software Engineering &amp; AI/ML opportunities</span>
+                <span>Available for Software Engineering &amp; ML roles</span>
               </div>
 
-              <p className="bio-text">{greeting.subTitle}</p>
+              <p className="bio-text">
+                Software Engineer with deep experience in Data Science, Machine
+                Learning, and AWS Cloud Architecture. Focused on building scalable
+                software systems, data pipelines, and production ML models.
+              </p>
 
               <div className="quick-links">
                 {greeting.resumeLink && (
@@ -93,7 +90,7 @@ const Main = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    [ Resume (PDF) ↗ ]
+                    Resume ↗
                   </a>
                 )}
                 {socialMediaLinks.github && (
@@ -102,7 +99,7 @@ const Main = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    [ GitHub ↗ ]
+                    GitHub ↗
                   </a>
                 )}
                 {socialMediaLinks.kaggle && (
@@ -111,7 +108,7 @@ const Main = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    [ Kaggle ↗ ]
+                    Kaggle ↗
                   </a>
                 )}
                 {socialMediaLinks.linkedin && (
@@ -120,13 +117,11 @@ const Main = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    [ LinkedIn ↗ ]
+                    LinkedIn ↗
                   </a>
                 )}
                 {contactInfo.email_address && (
-                  <a href={`mailto:${contactInfo.email_address}`}>
-                    [ {contactInfo.email_address} ]
-                  </a>
+                  <a href={`mailto:${contactInfo.email_address}`}>Email ↗</a>
                 )}
                 <span className="meta-tag">📍 {contactInfo.location}</span>
               </div>
@@ -134,7 +129,7 @@ const Main = () => {
           </header>
         </Reveal>
 
-        {/* The Straight Timeline Spine (Line in the left side going straight down) */}
+        {/* Straight Left Timeline Spine */}
         <main className="timeline-spine">
           {/* Section 01: Work Experience */}
           <section className="timeline-section" id="experience">
@@ -146,30 +141,63 @@ const Main = () => {
               </div>
             </Reveal>
 
-            {workExperiences.experience.map((exp, index) => (
-              <Reveal key={index} delay={index * 60}>
-                <article className="timeline-entry">
-                  <span className="entry-node"></span>
+            <Reveal delay={40}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">Associate Software Engineer</h2>
+                  <span className="entry-date">Apr 2026 – Present</span>
+                </div>
+                <div className="entry-subtitle">
+                  Anantech Venture Limited, Mumbai
+                </div>
+                <p className="entry-desc">
+                  Building automated data pipelines and scalable backend systems
+                  for enterprise operations.
+                </p>
+                <ul className="entry-bullets">
+                  <li>
+                    Built enterprise task tracking and attendance platforms with
+                    structured PostgreSQL data models.
+                  </li>
+                  <li>
+                    Automated Telegram campaign data extraction pipeline,
+                    eliminating repetitive manual data entry.
+                  </li>
+                </ul>
+              </article>
+            </Reveal>
 
-                  <div className="entry-title-row">
-                    <h2 className="entry-title">{exp.role}</h2>
-                    <span className="entry-date">{exp.date}</span>
-                  </div>
+            <Reveal delay={80}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">AI Analyst</h2>
+                  <span className="entry-date">Nov 2025 – Feb 2026</span>
+                </div>
+                <div className="entry-subtitle">Soul AI</div>
+                <p className="entry-desc">
+                  Conducted systematic error analysis and prompt benchmarking on
+                  1,000+ LLM outputs, driving an 18% improvement in model
+                  generation quality across 3 product iterations.
+                </p>
+              </article>
+            </Reveal>
 
-                  <div className="entry-subtitle">{exp.company}</div>
-
-                  <p className="entry-desc">{exp.desc}</p>
-
-                  {exp.descBullets && exp.descBullets.length > 0 && (
-                    <ul className="entry-bullets">
-                      {exp.descBullets.map((bullet, idx) => (
-                        <li key={idx}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
-              </Reveal>
-            ))}
+            <Reveal delay={120}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">Technical Volunteer</h2>
+                  <span className="entry-date">Dec 2022 – Feb 2026</span>
+                </div>
+                <div className="entry-subtitle">GDSC, VIT-AP University</div>
+                <p className="entry-desc">
+                  Mentored 300+ students in Machine Learning, Deep Learning, and
+                  Python across 15+ hackathons and hands-on workshops.
+                </p>
+              </article>
+            </Reveal>
           </section>
 
           {/* Section 02: Featured Projects */}
@@ -178,72 +206,130 @@ const Main = () => {
               <div className="section-header">
                 <span className="section-node"></span>
                 <span className="section-index">02 //</span>
-                <span className="section-title">Featured Projects &amp; Systems</span>
+                <span className="section-title">Featured Projects</span>
               </div>
             </Reveal>
 
-            {bigProjects.projects.map((proj, index) => (
-              <Reveal key={index} delay={index * 60}>
-                <article className="timeline-entry">
-                  <span className="entry-node"></span>
-
-                  <div className="entry-title-row">
-                    <h2 className="entry-title">{proj.projectName}</h2>
-                    <span className="entry-date">{proj.category}</span>
+            <Reveal delay={40}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">
+                    MediSkin — AI Skin Disease Detection
+                  </h2>
+                  <span className="entry-date">Computer Vision &amp; AI</span>
+                </div>
+                <p className="entry-desc">
+                  MobileNetV2 CNN classifier detecting 7 types of skin diseases
+                  with <strong>88.92% accuracy</strong> and sub-120ms real-time
+                  inference latency.
+                </p>
+                <div className="entry-footer">
+                  <div className="entry-links">
+                    <a
+                      href="https://github.com/xenon110/Mediskin"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Code ↗
+                    </a>
                   </div>
-
-                  <p className="entry-desc">{proj.projectDesc}</p>
-
-                  {/* Key Metrics */}
-                  {proj.metrics && proj.metrics.length > 0 && (
-                    <div className="entry-metrics">
-                      {proj.metrics.map((metric, idx) => (
-                        <span key={idx} className="metric-badge">
-                          <span className="metric-label">{metric.label}:</span>
-                          <span className="metric-value">{metric.value}</span>
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Key Highlights */}
-                  {proj.highlights && proj.highlights.length > 0 && (
-                    <ul className="entry-bullets">
-                      {proj.highlights.map((highlight, idx) => (
-                        <li key={idx}>{highlight}</li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {/* Footer Links & Tech Stack */}
-                  <div className="entry-footer">
-                    <div className="entry-links">
-                      {proj.githubUrl && (
-                        <a
-                          href={proj.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          [ GitHub Code ↗ ]
-                        </a>
-                      )}
-                      {proj.liveUrl && proj.liveUrl !== proj.githubUrl && (
-                        <a
-                          href={proj.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          [ Live Demo ↗ ]
-                        </a>
-                      )}
-                    </div>
-                    <div className="entry-tech">
-                      {proj.techStack && proj.techStack.join(" • ")}
-                    </div>
+                  <div className="entry-tech">
+                    Python • TensorFlow • CNN • React • Firebase
                   </div>
-                </article>
-              </Reveal>
-            ))}
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">
+                    Veyra — AI Email Analytics Platform
+                  </h2>
+                  <span className="entry-date">NLP &amp; LLMs</span>
+                </div>
+                <p className="entry-desc">
+                  Intelligent email management engine powered by Gemini 1.5 Pro
+                  achieving <strong>94.5% precision</strong> in categorization,
+                  currently serving 50+ active users.
+                </p>
+                <div className="entry-footer">
+                  <div className="entry-links">
+                    <a
+                      href="https://github.com/xenon110/Veyra"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Code ↗
+                    </a>
+                  </div>
+                  <div className="entry-tech">
+                    FastAPI • Gemini API • Gmail API • PostgreSQL
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">
+                    Scan2Eat — Food Nutrition &amp; Safety
+                  </h2>
+                  <span className="entry-date">AI &amp; Mobile</span>
+                </div>
+                <p className="entry-desc">
+                  OpenCV and OCR-driven nutrition analyzer parsing ingredients and
+                  toxicity risks with <strong>91.2% accuracy</strong> across
+                  5,000+ packaged items.
+                </p>
+                <div className="entry-footer">
+                  <div className="entry-links">
+                    <a
+                      href="https://github.com/xenon110/Scan2Eat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Code ↗
+                    </a>
+                  </div>
+                  <div className="entry-tech">
+                    Python • OpenCV • Machine Learning • React Native
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={160}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">Enterprise Task Platform</h2>
+                  <span className="entry-date">Backend &amp; Cloud</span>
+                </div>
+                <p className="entry-desc">
+                  Collaboration backend with role-based access control (RBAC),
+                  automated workflow escalation, and sub-50ms data synchronization.
+                </p>
+                <div className="entry-footer">
+                  <div className="entry-links">
+                    <a
+                      href="https://github.com/xenon110/Task_Management_BKM"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Code ↗
+                    </a>
+                  </div>
+                  <div className="entry-tech">
+                    Python • Node.js • PostgreSQL • React
+                  </div>
+                </div>
+              </article>
+            </Reveal>
           </section>
 
           {/* Section 03: Technical Skills */}
@@ -252,157 +338,185 @@ const Main = () => {
               <div className="section-header">
                 <span className="section-node"></span>
                 <span className="section-index">03 //</span>
-                <span className="section-title">Technical Stack &amp; Skills</span>
+                <span className="section-title">Technical Skills</span>
               </div>
             </Reveal>
 
             <Reveal>
               <div className="timeline-entry">
                 <span className="entry-node"></span>
-                <div className="skills-grid">
-                  <div className="skill-group">
-                    <div className="skill-category">Languages &amp; Core</div>
-                    <div className="skill-items">
-                      Python • SQL • JavaScript • C++ • Git &amp; GitHub
-                    </div>
+                <div className="skills-list">
+                  <div className="skill-row">
+                    <span className="skill-label">Languages:</span>
+                    <span className="skill-value">
+                      Python, SQL, JavaScript, C++, Git &amp; GitHub
+                    </span>
                   </div>
-
-                  <div className="skill-group">
-                    <div className="skill-category">
-                      AI / Machine Learning &amp; Data Science
-                    </div>
-                    <div className="skill-items">
-                      TensorFlow • PyTorch • Scikit-learn • OpenCV • Pandas •
-                      NumPy • Kaggle Competitions &amp; EDA • LLMs (Gemini API) • Transfer Learning • CNNs
-                    </div>
+                  <div className="skill-row">
+                    <span className="skill-label">AI &amp; Data Science:</span>
+                    <span className="skill-value">
+                      TensorFlow, PyTorch, Scikit-learn, OpenCV, Pandas, NumPy,
+                      Gemini API, Kaggle
+                    </span>
                   </div>
-
-                  <div className="skill-group">
-                    <div className="skill-category">
-                      Cloud &amp; Infrastructure
-                    </div>
-                    <div className="skill-items">
-                      Amazon Web Services (S3, Lambda, SageMaker, CloudWatch,
-                      EC2) • Docker • REST APIs
-                    </div>
+                  <div className="skill-row">
+                    <span className="skill-label">Cloud &amp; Infra:</span>
+                    <span className="skill-value">
+                      AWS (S3, Lambda, SageMaker, CloudWatch, EC2), Docker, REST
+                      APIs
+                    </span>
                   </div>
-
-                  <div className="skill-group">
-                    <div className="skill-category">Databases &amp; Systems</div>
-                    <div className="skill-items">
-                      PostgreSQL • Supabase • Firebase • FastAPI • Node.js •
-                      React.js
-                    </div>
+                  <div className="skill-row">
+                    <span className="skill-label">Databases &amp; Web:</span>
+                    <span className="skill-value">
+                      PostgreSQL, Supabase, Firebase, FastAPI, Node.js, React
+                    </span>
                   </div>
                 </div>
               </div>
             </Reveal>
           </section>
 
-          {/* Section 04: Research & Publications */}
-          {researchSection.display && researchSection.paper && (
-            <section className="timeline-section" id="research">
-              <Reveal>
-                <div className="section-header">
-                  <span className="section-node"></span>
-                  <span className="section-index">04 //</span>
-                  <span className="section-title">Research &amp; Publications</span>
+          {/* Section 04: Research */}
+          <section className="timeline-section" id="research">
+            <Reveal>
+              <div className="section-header">
+                <span className="section-node"></span>
+                <span className="section-index">04 //</span>
+                <span className="section-title">Research &amp; Publications</span>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">
+                    Energy Optimization in Data Centers
+                  </h2>
                 </div>
-              </Reveal>
+                <div className="entry-subtitle">VIT-AP University</div>
+                <p className="entry-desc">
+                  Researched data-driven algorithmic approaches to reduce power
+                  consumption in large-scale data centers while preserving
+                  computational throughput and reliability.
+                </p>
+              </article>
+            </Reveal>
+          </section>
 
-              <Reveal>
-                <article className="timeline-entry">
-                  <span className="entry-node"></span>
+          {/* Section 05: Certifications & Achievements */}
+          <section className="timeline-section" id="achievements">
+            <Reveal>
+              <div className="section-header">
+                <span className="section-node"></span>
+                <span className="section-index">05 //</span>
+                <span className="section-title">
+                  Certifications &amp; Honors
+                </span>
+              </div>
+            </Reveal>
 
-                  <div className="entry-title-row">
-                    <h2 className="entry-title">
-                      {researchSection.paper.title}
-                    </h2>
+            <Reveal>
+              <div className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="achievements-list">
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      GATE 2025 &amp; 2026 Qualified
+                    </span>
+                    <span className="achievement-tag">
+                      Computer Science &amp; IT
+                    </span>
                   </div>
-
-                  <div className="entry-subtitle">
-                    {researchSection.paper.institution}
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      BARC Scientific Officer Exam Qualified
+                    </span>
+                    <span className="achievement-tag">National Exam</span>
                   </div>
-
-                  <p className="entry-desc">{researchSection.paper.desc}</p>
-
-                  {researchSection.paper.highlights && (
-                    <ul className="entry-bullets">
-                      {researchSection.paper.highlights.map((hl, idx) => (
-                        <li key={idx}>{hl}</li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
-              </Reveal>
-            </section>
-          )}
-
-          {/* Section 05: Certifications & Honors */}
-          {achievementSection.display && (
-            <section className="timeline-section" id="achievements">
-              <Reveal>
-                <div className="section-header">
-                  <span className="section-node"></span>
-                  <span className="section-index">05 //</span>
-                  <span className="section-title">Certifications &amp; Achievements</span>
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      AWS Academy Cloud Architecting
+                    </span>
+                    <span className="achievement-tag">AWS Certified</span>
+                  </div>
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      500+ LeetCode DSA Problems Solved
+                    </span>
+                    <span className="achievement-tag">Algorithms</span>
+                  </div>
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      Top 10 AI/ML Projects Award &amp; Hackathon Winner
+                    </span>
+                    <span className="achievement-tag">VIT-AP</span>
+                  </div>
+                  <div className="achievement-row">
+                    <span className="achievement-title">
+                      Cybersecurity Essentials
+                    </span>
+                    <span className="achievement-tag">Cisco Academy</span>
+                  </div>
                 </div>
-              </Reveal>
-
-              <Reveal>
-                <div className="timeline-entry">
-                  <span className="entry-node"></span>
-                  <div className="achievements-list">
-                    {achievementSection.achievementsCards.map((item, idx) => (
-                      <div key={idx} className="achievement-row">
-                        <span className="achievement-title">{item.title}</span>
-                        <span className="achievement-tag">[{item.tag}]</span>
-                        <div className="achievement-desc">{item.subtitle}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Reveal>
-            </section>
-          )}
+              </div>
+            </Reveal>
+          </section>
 
           {/* Section 06: Education */}
-          {educationInfo.display && (
-            <section className="timeline-section" id="education">
-              <Reveal>
-                <div className="section-header">
-                  <span className="section-node"></span>
-                  <span className="section-index">06 //</span>
-                  <span className="section-title">Education</span>
+          <section className="timeline-section" id="education">
+            <Reveal>
+              <div className="section-header">
+                <span className="section-node"></span>
+                <span className="section-index">06 //</span>
+                <span className="section-title">Education</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={40}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">VIT-AP University</h2>
+                  <span className="entry-date">2022 – 2026</span>
                 </div>
-              </Reveal>
+                <div className="entry-subtitle">
+                  B.Tech in Computer Science and Engineering •{" "}
+                  <strong>CGPA: 8.66 / 10.0</strong>
+                </div>
+              </article>
+            </Reveal>
 
-              {educationInfo.schools.map((edu, idx) => (
-                <Reveal key={idx} delay={idx * 60}>
-                  <article className="timeline-entry">
-                    <span className="entry-node"></span>
+            <Reveal delay={80}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">Majdoor Kishan College</h2>
+                  <span className="entry-date">2020 – 2022</span>
+                </div>
+                <div className="entry-subtitle">
+                  Class XII (Senior Secondary, Science &amp; Mathematics) •{" "}
+                  <strong>87%</strong>
+                </div>
+              </article>
+            </Reveal>
 
-                    <div className="entry-title-row">
-                      <h2 className="entry-title">{edu.schoolName}</h2>
-                      <span className="entry-date">{edu.duration}</span>
-                    </div>
-
-                    <div className="entry-subtitle">{edu.subHeader}</div>
-
-                    <p className="entry-desc">{edu.desc}</p>
-
-                    {edu.bullets && edu.bullets.length > 0 && (
-                      <ul className="entry-bullets">
-                        {edu.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx}>{bullet}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </article>
-                </Reveal>
-              ))}
-            </section>
-          )}
+            <Reveal delay={120}>
+              <article className="timeline-entry">
+                <span className="entry-node"></span>
+                <div className="entry-title-row">
+                  <h2 className="entry-title">
+                    Jawahar Navodaya Vidyalaya (JNV Palamu)
+                  </h2>
+                  <span className="entry-date">2019 – 2020</span>
+                </div>
+                <div className="entry-subtitle">
+                  Class X (Secondary School Certificate) • <strong>85%</strong>
+                </div>
+              </article>
+            </Reveal>
+          </section>
 
           {/* Section 07: Contact */}
           <section className="timeline-section" id="contact">
@@ -441,21 +555,19 @@ const Main = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {contactInfo.github}
+                      github.com/xenon110
                     </a>
                   </div>
-                  {contactInfo.kaggle && (
-                    <div className="contact-row">
-                      <span className="contact-key">Kaggle:</span>
-                      <a
-                        href={socialMediaLinks.kaggle}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {contactInfo.kaggle}
-                      </a>
-                    </div>
-                  )}
+                  <div className="contact-row">
+                    <span className="contact-key">Kaggle:</span>
+                    <a
+                      href={socialMediaLinks.kaggle}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      kaggle.com/raj110
+                    </a>
+                  </div>
                   <div className="contact-row">
                     <span className="contact-key">LinkedIn:</span>
                     <a
@@ -463,7 +575,7 @@ const Main = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {contactInfo.linkedin}
+                      linkedin.com/in/mayank-raj-b8b312272
                     </a>
                   </div>
                   {greeting.resumeLink && (
@@ -474,7 +586,7 @@ const Main = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Google Drive PDF
+                        Google Drive PDF ↗
                       </a>
                     </div>
                   )}
@@ -488,8 +600,7 @@ const Main = () => {
             <div className="timeline-end">
               <span className="end-node"></span>
               <div className="end-text">
-                {"// EOF — Built by Mayank Raj • Updated " +
-                  new Date().getFullYear()}
+                {"// Mayank Raj • " + new Date().getFullYear()}
               </div>
             </div>
           </Reveal>

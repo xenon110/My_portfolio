@@ -1,20 +1,20 @@
-// Pure Black Minimalist Timeline Theme
+// Ultra-Clean, Readable Minimalist Portfolio Theme
 html,
 body,
 #root {
-  background-color: #000000 !important;
+  background-color: #050505 !important;
   color: #ededed !important;
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-// Scroll Reveal Animations (Subtle, sleek fade-in-up)
+// Subtle scroll reveal
 .reveal-item {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 
   &.is-visible {
@@ -23,18 +23,18 @@ body,
   }
 }
 
-@keyframes livePulse {
+@keyframes pulseLive {
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  }
-  70% {
+    opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.9);
   }
   100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -47,16 +47,17 @@ body,
 }
 
 .plain-portfolio {
-  background-color: #000000;
-  color: #ededed;
+  background-color: #050505;
+  color: #e4e4e7;
   min-height: 100vh;
   width: 100%;
-  padding: 64px 24px 110px 24px;
+  padding: 64px 20px 100px 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   * {
     box-sizing: border-box;
@@ -64,41 +65,37 @@ body,
 
   .plain-container {
     width: 100%;
-    max-width: 780px;
+    max-width: 740px;
   }
 
-  // Top Profile Section (Picture on one side, plain text on the other)
+  // Profile Header: Plain, readable, high-contrast
   .profile-intro {
     display: flex;
     align-items: flex-start;
-    gap: 32px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #1c1c20;
+    gap: 28px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #1a1a1e;
 
     @media (max-width: 600px) {
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
 
     .profile-photo-wrapper {
       flex-shrink: 0;
 
       .profile-photo {
-        width: 116px;
-        height: 116px;
-        border-radius: 10px;
+        width: 104px;
+        height: 104px;
+        border-radius: 8px;
         object-fit: cover;
         border: 1px solid #27272a;
         background-color: #09090b;
         display: block;
-        filter: grayscale(10%);
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: border-color 0.2s ease;
 
         &:hover {
-          filter: grayscale(0%);
           border-color: #52525b;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
         }
       }
     }
@@ -107,20 +104,19 @@ body,
       flex: 1;
 
       .name-heading {
-        font-size: 2.1rem;
-        font-weight: 800;
-        letter-spacing: -0.035em;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
         color: #ffffff;
         margin: 0 0 6px 0;
         line-height: 1.15;
       }
 
       .tagline {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: #a1a1aa;
-        letter-spacing: 0.03em;
-        margin: 0 0 12px 0;
+        margin: 0 0 10px 0;
+        font-weight: 500;
       }
 
       .status-line {
@@ -129,45 +125,41 @@ body,
         gap: 8px;
         font-size: 0.825rem;
         color: #d4d4d8;
-        background-color: #0c0c0e;
-        border: 1px solid #27272a;
-        padding: 3px 10px;
-        border-radius: 9999px;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
 
         .status-dot {
-          width: 7px;
-          height: 7px;
+          width: 6px;
+          height: 6px;
           border-radius: 50%;
           background-color: #22c55e;
-          animation: livePulse 2s infinite ease-in-out;
+          animation: pulseLive 2s infinite ease-in-out;
         }
       }
 
       .bio-text {
-        font-size: 0.94rem;
+        font-size: 0.925rem;
         color: #a1a1aa;
         margin: 0 0 16px 0;
-        line-height: 1.65;
+        line-height: 1.6;
       }
 
       .quick-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.825rem;
+        align-items: center;
+        gap: 16px;
+        font-size: 0.85rem;
 
         a {
-          color: #ffffff;
+          color: #f4f4f5;
           text-decoration: none;
           border-bottom: 1px solid #3f3f46;
-          padding-bottom: 2px;
-          transition: all 0.2s ease;
+          padding-bottom: 1px;
+          transition: color 0.15s ease, border-color 0.15s ease;
 
           &:hover {
-            color: #38bdf8;
-            border-bottom-color: #38bdf8;
+            color: #ffffff;
+            border-bottom-color: #ffffff;
           }
         }
 
@@ -181,63 +173,60 @@ body,
   // Straight Timeline Spine (Line running down the left side)
   .timeline-spine {
     position: relative;
-    margin-top: 48px;
-    margin-left: 8px;
-    padding-left: 32px;
-    border-left: 1px solid #27272a;
+    margin-top: 40px;
+    margin-left: 6px;
+    padding-left: 28px;
+    border-left: 1px solid #1f1f23;
 
     @media (max-width: 600px) {
-      margin-left: 4px;
-      padding-left: 22px;
+      margin-left: 2px;
+      padding-left: 20px;
     }
 
     // Section Block
     .timeline-section {
-      margin-bottom: 56px;
+      margin-bottom: 48px;
 
       &:last-child {
         margin-bottom: 0;
       }
 
-      // Bold, Bigger Section Header with Cool Visual Treatment
+      // Crisp Section Header
       .section-header {
         position: relative;
         display: flex;
-        align-items: baseline;
-        gap: 10px;
-        margin: 0 0 28px 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #18181b;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 24px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #141418;
 
         .section-node {
           position: absolute;
-          left: -39px;
-          top: 7px;
-          width: 13px;
-          height: 13px;
+          left: -33px;
+          top: 6px;
+          width: 9px;
+          height: 9px;
           border-radius: 50%;
-          background-color: #000000;
-          border: 2px solid #ffffff;
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
-          transition: all 0.25s ease;
+          background-color: #050505;
+          border: 1.5px solid #ffffff;
 
           @media (max-width: 600px) {
-            left: -29px;
+            left: -25px;
           }
         }
 
         .section-index {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          font-size: 0.9rem;
-          font-weight: 700;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-size: 0.825rem;
           color: #71717a;
-          letter-spacing: 0.08em;
+          font-weight: 600;
         }
 
         .section-title {
-          font-size: 1.35rem;
-          font-weight: 800;
-          letter-spacing: -0.025em;
+          font-size: 1.15rem;
+          font-weight: 700;
+          letter-spacing: -0.01em;
           color: #ffffff;
           text-transform: uppercase;
         }
@@ -246,7 +235,7 @@ body,
       // Individual Timeline Entry
       .timeline-entry {
         position: relative;
-        margin-bottom: 32px;
+        margin-bottom: 26px;
 
         &:last-child {
           margin-bottom: 0;
@@ -254,25 +243,23 @@ body,
 
         .entry-node {
           position: absolute;
-          left: -36.5px;
-          top: 8px;
-          width: 8px;
-          height: 8px;
+          left: -32px;
+          top: 7px;
+          width: 7px;
+          height: 7px;
           border-radius: 50%;
-          background-color: #000000;
+          background-color: #050505;
           border: 1.5px solid #52525b;
-          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: all 0.2s ease;
 
           @media (max-width: 600px) {
-            left: -26.5px;
+            left: -24px;
           }
         }
 
         &:hover .entry-node {
           border-color: #ffffff;
           background-color: #ffffff;
-          box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-          transform: scale(1.3);
         }
 
         .entry-title-row {
@@ -281,173 +268,128 @@ body,
           justify-content: space-between;
           flex-wrap: wrap;
           gap: 6px;
-          margin-bottom: 4px;
+          margin-bottom: 2px;
 
           .entry-title {
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.05rem;
+            font-weight: 600;
             color: #ffffff;
             margin: 0;
-            letter-spacing: -0.015em;
           }
 
           .entry-date {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.8rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.775rem;
             color: #71717a;
           }
         }
 
         .entry-subtitle {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-          font-size: 0.85rem;
+          font-size: 0.875rem;
           color: #a1a1aa;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
+          font-weight: 500;
         }
 
         .entry-desc {
           font-size: 0.92rem;
-          color: #a1a1aa;
-          margin: 0 0 8px 0;
-          line-height: 1.65;
+          color: #d4d4d8;
+          margin: 0 0 6px 0;
+          line-height: 1.6;
         }
 
         .entry-bullets {
-          margin: 6px 0 12px 0;
-          padding-left: 18px;
-          color: #a1a1aa;
-          font-size: 0.885rem;
-          line-height: 1.65;
+          margin: 4px 0 8px 0;
+          padding-left: 16px;
+          color: #d4d4d8;
+          font-size: 0.9rem;
+          line-height: 1.6;
 
           li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            color: #d4d4d8;
           }
         }
 
-        // Metrics Row (Data points styled as cool monospace tags)
-        .entry-metrics {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin: 12px 0;
+        // Crisp Highlights & Metric One-Liners
+        .entry-metric-line {
+          font-size: 0.85rem;
+          color: #a1a1aa;
+          margin: 6px 0;
+          line-height: 1.5;
 
-          .metric-badge {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.775rem;
-            color: #e4e4e7;
-            background-color: #0c0c0e;
-            border: 1px solid #27272a;
-            padding: 4px 10px;
-            border-radius: 5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-
-            &:hover {
-              border-color: #52525b;
-              background-color: #121216;
-            }
-
-            .metric-label {
-              color: #71717a;
-            }
-
-            .metric-value {
-              color: #ffffff;
-              font-weight: 600;
-            }
+          strong {
+            color: #ffffff;
+            font-weight: 600;
           }
         }
 
-        // Tech and Action Links
+        // Clean Footer Links & Tech Stack
         .entry-footer {
           display: flex;
           align-items: center;
           justify-content: space-between;
           flex-wrap: wrap;
-          gap: 12px;
-          margin-top: 12px;
-          padding-top: 8px;
-          border-top: 1px dashed #1c1c20;
+          gap: 10px;
+          margin-top: 8px;
 
           .entry-links {
             display: flex;
-            gap: 14px;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            gap: 12px;
             font-size: 0.825rem;
 
             a {
-              color: #ffffff;
+              color: #f4f4f5;
               text-decoration: none;
               border-bottom: 1px solid #3f3f46;
-              padding-bottom: 2px;
-              transition: all 0.2s ease;
+              padding-bottom: 1px;
+              transition: all 0.15s ease;
 
               &:hover {
-                color: #38bdf8;
-                border-bottom-color: #38bdf8;
+                color: #ffffff;
+                border-bottom-color: #ffffff;
               }
             }
           }
 
           .entry-tech {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.775rem;
+            font-size: 0.8rem;
             color: #71717a;
           }
         }
       }
 
-      // Skills Plain Text Grid with Tech Accents
-      .skills-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
+      // Plain, Crisp Skills
+      .skills-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-        .skill-group {
+        .skill-row {
           font-size: 0.9rem;
-          padding: 10px 14px;
-          background-color: #08080a;
-          border: 1px solid #1c1c20;
-          border-radius: 6px;
-          transition: border-color 0.2s ease;
+          display: flex;
+          align-items: baseline;
+          gap: 10px;
+          flex-wrap: wrap;
 
-          &:hover {
-            border-color: #27272a;
-          }
-
-          .skill-category {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.825rem;
-            font-weight: 700;
+          .skill-label {
             color: #ffffff;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-
-            &::before {
-              content: ">";
-              color: #38bdf8;
-              font-weight: bold;
-            }
+            font-weight: 600;
+            min-width: 140px;
           }
 
-          .skill-items {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.825rem;
+          .skill-value {
             color: #a1a1aa;
-            line-height: 1.6;
+            line-height: 1.5;
           }
         }
       }
 
-      // Achievements Plain List
+      // Crisp Achievements List
       .achievements-list {
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 10px;
 
         .achievement-row {
           display: flex;
@@ -456,66 +398,55 @@ body,
           flex-wrap: wrap;
           gap: 6px;
           font-size: 0.92rem;
-          padding-bottom: 8px;
-          border-bottom: 1px dashed #18181b;
-
-          &:last-child {
-            border-bottom: none;
-          }
 
           .achievement-title {
             color: #ffffff;
-            font-weight: 600;
+            font-weight: 500;
           }
 
           .achievement-tag {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
             font-size: 0.775rem;
-            color: #38bdf8;
-            background-color: rgba(56, 189, 248, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 1px 6px;
-            border-radius: 4px;
+            color: #a1a1aa;
           }
 
           .achievement-desc {
             width: 100%;
             font-size: 0.85rem;
             color: #a1a1aa;
-            margin-top: 4px;
-            line-height: 1.5;
+            margin-top: 2px;
           }
         }
       }
 
-      // Contact Section Details
+      // Clean Contact Rows
       .contact-details {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.88rem;
+        font-size: 0.9rem;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
 
         .contact-row {
           display: flex;
-          gap: 14px;
+          align-items: center;
+          gap: 12px;
           color: #a1a1aa;
 
           .contact-key {
             color: #71717a;
-            width: 86px;
-            font-weight: 600;
+            width: 76px;
+            font-weight: 500;
           }
 
           a {
             color: #ffffff;
             text-decoration: none;
             border-bottom: 1px solid #3f3f46;
-            transition: all 0.2s ease;
+            padding-bottom: 1px;
+            transition: all 0.15s ease;
 
             &:hover {
-              color: #38bdf8;
-              border-bottom-color: #38bdf8;
+              border-bottom-color: #ffffff;
             }
           }
         }
@@ -525,25 +456,25 @@ body,
     // Timeline End Marker
     .timeline-end {
       position: relative;
-      padding-top: 24px;
+      padding-top: 20px;
 
       .end-node {
         position: absolute;
-        left: -37px;
-        top: 28px;
-        width: 9px;
-        height: 9px;
+        left: -31px;
+        top: 23px;
+        width: 5px;
+        height: 5px;
         background-color: #52525b;
-        border-radius: 1px;
+        border-radius: 50%;
 
         @media (max-width: 600px) {
-          left: -27px;
+          left: -23px;
         }
       }
 
       .end-text {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        font-size: 0.775rem;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.75rem;
         color: #52525b;
       }
     }
